@@ -92,8 +92,9 @@ nav.nav-extended {
     margin-top: 30px;
 }
 .form-check {
-    margin-left: 150px;
+    margin-left: 40px;
 }
+
 /*.result-price {
     display: flex;
 }*/
@@ -128,4 +129,7 @@ a:hover {
 .form2 {
     margin-left: 55px;
     width: 720px;
+}
+.btn-info {
+    background-color: teal;
 }
