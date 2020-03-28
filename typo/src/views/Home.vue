@@ -56,4 +56,7 @@ export default {
     myfooter
   }
 }
+/*$(document).ready(function(){
+  alert(jQuery.fn.jquery);
+});*/
 </script>

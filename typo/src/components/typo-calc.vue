@@ -1,9 +1,5 @@
 <template>
-    <div>
-        <navbar />
-        <br>
-        <br>
-        <br>
+    <div class="container-calc">
         <div class="choose_field" style="display: flex; justify-content: space-around">
             <div class="form-group1">
                 <div class="form">
@@ -62,42 +58,30 @@
                 <img src="img/bcards.jpg"alt="">
             </div>
         </div>
-        <br>
-        <div class="form-check">
-            <div class="custom-control custom-checkbox">
-                <input type="checkbox" class="custom-control-input" id="customCheck1">
-                <label class="custom-control-label" for="customCheck1">Послепечатная обработка</label>
-            </div>
-        </div>
-        <br>
-        <br>
-        <p class="cost-p">Стоимость заказа</p>
-        <div class="input-group mb-3">
-            <input type="text" class="form-control"  placeholder="" aria-label="Recipient's username" aria-describedby="basic-addon2" disabled>
-            <div class="input-group-append">
-                <button class="btn btn-info teal darken-1" type="button">В корзину</button>
-            </div>
-        </div>
-        <myfooter />
+
+
     </div>
 </template>
 
 <script>
-    import navbar from '@/components/navbar.vue'
-    import myfooter from "@/components/myfooter.vue"
-    // let cardCost = this.$store.getters.getCardCost;
-    // console.log(cardCost);
-    export default {
-        name: 'cards',
-        components: {
-            navbar,
-            myfooter
-        },
+   /* export default {
+        name: "typo-calc",
 
-    }
+        data() {
+            return {
+        basicCost : 544
+        } },
+        computed: {
+            cardCalc: function (basicCost) {
+
+            }
+        }
+    }*/
+
+
+
 
 </script>
-
 
 <style scoped>
 
