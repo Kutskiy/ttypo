@@ -1,0 +1,131 @@
+.phonewrap {
+    margin-left: 700px;
+}
+.phone {
+    font-size: 2em;
+}
+.contacts {
+    margin-left: 150px;
+    margin-top: -30px;
+}
+.brand-logo {
+    margin-left: 50px;
+    margin-top: 25px;
+}
+/*.content-wrap div {
+    border: 1px solid black;
+}*/
+.content {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+}
+.price {
+    font-size: 14px;
+}
+.cost {
+    font-size: 18px;
+    font-weight: 600;
+}
+.value {
+    line-height: 14px;
+    font-size: 12px;
+    color: #aaaaaa;
+}
+.content a {
+    text-decoration: none;
+    color: #555555;
+}
+.row li a {
+    text-decoration: none;
+}
+.icons {
+    text-align: center;
+    width: 360px;
+    color: white;
+}
+.subfooter {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding-bottom: 20px;
+    padding-top: 7px;
+}
+.basket-wrapper {
+    margin-top: 75px;
+    margin-bottom: 75px;
+    padding-left: 50px;
+}
+.svg {
+    padding-bottom: 5px;
+    padding-top: 5px;
+    color: white;
+}
+
+
+nav.nav-extended {
+    -webkit-box-sizing: content-box;
+   box-sizing: content-box;
+    height: 222px;
+}
+.booklets, .cards, .print {
+    width: 360px;
+}
+.nav-content {
+    margin-top: 75px;
+}
+.choose{
+    height: 150px;
+    text-align: center;
+    padding-top: 50px;
+    font-size: 1.75em;
+    color: #555555;
+}
+.form {
+    /*border: 1px solid black;*/
+    height: 75px;
+    width: 300px;
+}
+.form-group1, .form-group2 {
+    margin-top: 30px;
+    text-align: center;
+    margin-top: 30px;
+}
+.form-check {
+    margin-left: 150px;
+}
+/*.result-price {
+    display: flex;
+}*/
+/*#disabledInput {
+    width: 880px;
+    margin-left: 190px;
+}*/
+.input-group {
+    margin-left: 150px;
+    width: 900px;
+}
+.cost-p {
+    margin-left: 150px;
+}
+.form-image {
+    margin-top: 40px;
+    margin-left: 20px;
+}
+a:hover {
+    text-decoration: none !important;
+    color: white !important;
+}
+.content a:hover {
+    color: #555555 !important;
+}
+.nav-wrapper {
+    width: 100%;
+}
+.navbar {
+    padding: 0 !important;
+}
+.form2 {
+    margin-left: 55px;
+    width: 720px;
+}
