@@ -133,3 +133,23 @@ a:hover {
 .btn-info {
     background-color: teal;
 }
+label {
+    font-size: 1.5em;
+}
+.custom-control-label {
+    font-size: 1em;
+}
+@media (max-width: 767px) {
+    .brand-logo {left:1% !important;}
+    .phone {width: 300px}
+    #app {width: 767px !important;}
+}
+@media (min-width: 768px) and (max-width: 991px) {
+    /* стили для sm-устройств */
+}
+@media (min-width: 991px) and (max-width: 1199px) {
+    /* стили для md-устройств */
+}
+@media (min-width: 1200px) {
+    /* стили для lg-устройств */
+}

@@ -11,6 +11,8 @@ import "bootstrap-vue/dist/bootstrap-vue.js"
 import "bootstrap"
 
 
+
+
 global.jQuery = global.$ = $
 
 Vue.config.productionTip = false

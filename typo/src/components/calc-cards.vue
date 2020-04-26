@@ -8,31 +8,38 @@
         <div class="form-group1">
             <div class="form">
                 <form action="">
-                    <legend>Плотность бумаги</legend>
-                    <select class="form-control" id="exampleFormControlSelect1" name="">
-                        <option value="">
-                            300 г/м² картон глянц.
-                        </option>
+                    <label>Плотность бумаги</label>
+                    <select v-model="selectedpaper"
+                            class="form-control"
+                             id="exampleFormControlSelect1" name="">
+                        <option disabled value="">Выберете
+                            один из вариантов</option>
+                        <option value="0">300 г/м² картон глянц .</option>
                     </select>
                 </form>
             </div>
             <br>
             <div class="form">
                 <form action="">
-                    <legend>Тираж</legend>
-                    <select class="form-control" id="circ" name="circ">
-                        <option id="cp1" value="" data-cp1="0">100 шт.</option>
-                        <option id="cp2" value="" data-cp2="76">200 шт.</option>
-                        <option id="cp3" value="" data-cp3="">500 шт.</option>
-                        <option id="cp4" value="" data-cp4="4">1 000 шт.</option>
-                        <option id="cp5" value=""  data-cp5="">2 000 шт.</option>
-                        <option id="cp6" value="" data-cp6="">3 000 шт.</option>
-                        <option id="cp7" value="" data-cp7="">4 000 шт.</option>
-                        <option id="cp8" value="" data-cp8="8">5 000 шт.</option>
-                        <option id="cp9" value="" data-cp9="">6 000 шт.</option>
-                        <option id="cp10" value="" data-cp10="">8 000 шт.</option>
-                        <option id="cp11" value="" data-cp11="">10 000 шт.</option>
-                        <option id="cp12" value="" data-cp12="">20 000 шт.</option>
+                    <label>Тираж</label>
+                    <select v-model="selectedcirk"
+                            class="form-control"
+                            id="circ"
+                             name="circ">
+                        <option disabled value="">Выберете
+                            один из вариантов</option>
+                        <option id="cp1"  :value="500">100 шт .</option>
+                        <option id="cp2" :value="650">200 шт .</option>
+                        <option id="cp3" :value="750">500 шт.</option>
+                        <option id="cp4" :value="950">1 000 шт.</option>
+                        <option id="cp5" :value="1300">2 000 шт .</option>
+                        <option id="cp6" :value="2000">3 000 шт .</option>
+                        <option id="cp7" :value="2400">4 000 шт .</option>
+                        <option id="cp8" :value="3100">5 000 шт.</option>
+                        <option id="cp9" :value="3600">6 000 шт.</option>
+                        <option id="cp10" :value="4500">8 000 шт.</option>
+                        <option id="cp11" :value="5350">10 000 шт.</option>
+                        <option id="cp12" :value="9900">20 000 шт .</option>
                     </select>
                 </form>
             </div>
@@ -40,23 +47,31 @@
         <div class="form-group2">
             <div class="form">
                 <form action="">
-                    <legend>Формат визитки</legend>
-                    <select class="form-control" id="exampleFormControlSelect1" name="">
-                        <option value="">90 х 50 мм</option>
-                        <option value="">85 х 55 мм</option>
+                    <label>Формат визитки</label>
+                    <select class="form-control" name=""
+                            v-model="selected">
+                        <option disabled selected value="">Выберете один из
+                            вариантов</option>
+                        <option :value="0" >90 х 50 мм</option>
+                        <option :value="0">85 х 55 мм</option>
                     </select>
                 </form>
             </div>
             <br>
             <div class="form">
                 <form action="">
-                    <legend>Полноцветная печать</legend>
-                    <select class="form-control" name="" id="">
-                        <option value="">С двух сторон </option>
-                        <option value="">С одной стороны</option>
+                    <label>Полноцветная печать</label>
+                    <select v-model="selectedcolorprint"
+                            class="form-control"
+                            name=""
+                            id="">
+                        <option disabled value="">Выберете
+                            один из вариантов</option>
+                        <option :value="800">С двух сторон </option>
+                        <option :value="500">С одной стороны</option>
                     </select>
                 </form>
-            </div>
+            </div>`
         </div>
         <div class="form-image">
             <img src="img/bcards.jpg"alt="">
@@ -71,10 +86,11 @@
         <br>
         <div class="output-wrapper" style="display: flex; height: 50px; margin-left: 25px; margin-top:60px; ">
             <div class="alert alert-success" id="costOutput" role="alert" style="height: 50px !important; width: 700px" >
-                Стоимость заказа:
+                Стоимость заказа: {{ totalcost }}
             </div>
-            <div class="button" style="padding: 0 !important; height: 75px">
-                <button class="btn btn-info" style="height: 50px" >
+            <div class="button" style="padding: 0 !important;
+            height: 75px">
+                <button class="btn btn-info" style="height: 50px">
                     в корзину
                 </button>
             </div>
@@ -86,8 +102,31 @@
 </template>
 
 <script>
+    export default {
+        name: 'calc-cards',
+        data: () => {
+               return  {
+                   defaultcost: 500,
+                   selected: +'',
+                   selectedcirk: +'',
+                   selectedpaper: +'',
+                   selectedcolorprint: +'',
 
-        const elCp1 =  document.getElementById('cp1');
+               }
+        },
+        computed: {
+            totalcost: function () {
+                return this.selectedcirk +
+                    this.selected + this.selectedpaper +
+                    this.selectedcolorprint
+            },
+
+        },
+
+    }
+
+
+        /*const elCp1 =  document.getElementById('cp1');
         cp1 = elCp1.dataset.cp1;
         const elCp2 = document.getElementById('cp2');
         cp2 = elCp2.dataset.cp2;
@@ -108,21 +147,14 @@
         const elCp10 = document.getElementById('cp10');
         cp10 = elCp10.dataset.cp10;
         const elCp11 = document.getElementById('cp11');
-        cp11 = elCp11.dataset.cp11;
-        const elCp12 = document.getElementById('cp12');
-        cp12 = elCp12.dataset.cp12;
-
-
-
     let compCost  = '544';
     document.getElementById('costOutput').innerHTML =  document.getElementById('costOutput').innerHTML + compCost.toString() +'&#8381';
-
-
-
-
+        */
 
 </script>
 
 <style scoped>
 
 </style>
+
+

@@ -21,7 +21,7 @@
           <div class="booklets-wrap"><a href="#">
             <br>
             <span class="price">от</span>
-            <span class="cost">1 000 &#8381</span>
+            <span class="cost">1 100 &#8381</span>
             <br>
             <span class="value">(за 1 000 шт.)</span>
           </a>
@@ -31,9 +31,9 @@
         <div class="print hoverable"><a href="#"> <h4>Цифровая печать</h4> <img src="/img/catalogs.jpg" alt="">
           <br>
           <span class="price">от</span>
-          <span class="cost">1 000 &#8381</span>
+          <span class="cost">1 200 &#8381</span>
           <br>
-          <span class="value">(за 1 000 шт.)</span>
+          <span class="value">(за 100 шт.)</span>
         </a>
         </div>
       </div>
