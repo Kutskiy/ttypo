@@ -14,7 +14,7 @@
                              id="exampleFormControlSelect1" name="">
                         <option disabled value="">Выберете
                             один из вариантов</option>
-                        <option value="0">300 г/м² картон глянц .</option>
+                        <option :value="0">300 г/м² картон глянц .</option>
                     </select>
                 </form>
             </div>
@@ -31,7 +31,7 @@
                         <option id="cp1"  :value="500">100 шт .</option>
                         <option id="cp2" :value="650">200 шт .</option>
                         <option id="cp3" :value="750">500 шт.</option>
-                        <option id="cp4" :value="950">1 000 шт.</option>
+                        <option id="cp4" :value="1000">1 000 шт .</option>
                         <option id="cp5" :value="1300">2 000 шт .</option>
                         <option id="cp6" :value="2000">3 000 шт .</option>
                         <option id="cp7" :value="2400">4 000 шт .</option>
@@ -50,7 +50,8 @@
                     <label>Формат визитки</label>
                     <select class="form-control" name=""
                             v-model="selected">
-                        <option disabled selected value="">Выберете один из
+                        <option disabled selected value=""
+                        >Выберете один из
                             вариантов</option>
                         <option :value="0" >90 х 50 мм</option>
                         <option :value="0">85 х 55 мм</option>
@@ -61,17 +62,19 @@
             <div class="form">
                 <form action="">
                     <label>Полноцветная печать</label>
-                    <select v-model="selectedcolorprint"
+                    <select
+                            v-model="selectedcolorprint"
                             class="form-control"
                             name=""
                             id="">
-                        <option disabled value="">Выберете
+                        <option disabled value="" >Выберете
                             один из вариантов</option>
-                        <option :value="800">С двух сторон </option>
-                        <option :value="500">С одной стороны</option>
+                        <option  :value="1">С двух сторон
+                        </option>
+                        <option :value="0">С одной стороны</option>
                     </select>
                 </form>
-            </div>`
+            </div>
         </div>
         <div class="form-image">
             <img src="img/bcards.jpg"alt="">
@@ -84,7 +87,9 @@
             </div>
         </div>
         <br>
-        <div class="output-wrapper" style="display: flex; height: 50px; margin-left: 25px; margin-top:60px; ">
+        <div class="output-wrapper" style="display: flex; height:
+        50px; margin-left: 25px; margin-top:60px;" v-if="totalcost
+        !== '000'">
             <div class="alert alert-success" id="costOutput" role="alert" style="height: 50px !important; width: 700px" >
                 Стоимость заказа: {{ totalcost }}
             </div>
@@ -108,11 +113,26 @@
                return  {
                    defaultcost: 500,
                    selected: +'',
-                   selectedcirk: +'',
+                   selectedcirk: +'500',
                    selectedpaper: +'',
-                   selectedcolorprint: +'',
+                   selectedcolorprint: +'0',
 
                }
+        },
+        watch: {
+            selectedcolorprint() {
+                console.log('Hello');
+                let opt = document.getElementById('cp1');
+                opt.setAttribute('value', '2');
+                console.log(opt.getAttribute('value'));
+                let opt2 = document.getElementById('cp4');
+                opt2.setAttribute('value', '5000');
+                console.log(opt2.value)
+            },
+            selectedcirk() {
+                let opp = document.getElementById('cp3');
+                console.log(opp.value)
+            }
         },
         computed: {
             totalcost: function () {
@@ -122,6 +142,10 @@
             },
 
         },
+        methods: {
+
+        }
+
 
     }
 
